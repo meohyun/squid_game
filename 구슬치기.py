@@ -127,6 +127,18 @@ while running:
             if answer == computer_choice_hz[0]:
                 my_bead -= computer_nums[0]
                 computer_bead += computer_nums[0]
+
+                # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
+
+                if my_bead < 0:
+                    my_bead = 0
+                if computer_bead < 0 :
+                    computer_bead = 0
+                if my_bead > 20:
+                    my_bead = 20 
+                if computer_bead > 20:
+                    computer_bead = 20
+                    
                 print(f"""
 컴퓨터가 맞췄습니다. 컴퓨터가 배팅한 구슬은 {computer_nums[0]}개입니다. 
 당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
@@ -136,6 +148,18 @@ while running:
             else:
                 my_bead += computer_nums[0]
                 computer_bead -= computer_nums[0]
+
+                # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
+
+                if my_bead < 0:
+                    my_bead = 0
+                if computer_bead < 0 :
+                    computer_bead = 0
+                if my_bead > 20:
+                    my_bead = 20 
+                if computer_bead > 20:
+                    computer_bead = 20
+
                 print(f"""
 컴퓨터가 틀렸습니다. 컴퓨터가 배팅한 구슬은 {computer_nums[0]}개입니다. 
 당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
@@ -183,6 +207,18 @@ while running:
             if answer == my_selection:
                 my_bead += my_choice_2
                 computer_bead -= my_choice_2
+
+                # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
+
+                if my_bead < 0:
+                    my_bead = 0
+                if computer_bead < 0 :
+                    computer_bead = 0
+                if my_bead > 20:
+                    my_bead = 20 
+                if computer_bead > 20:
+                    computer_bead = 20
+
                 print(f"""
 당신이 맞췄습니다. 내가 배팅한 구슬은 {my_choice_2}개입니다. 
 당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
@@ -193,6 +229,18 @@ while running:
             else:
                 my_bead -= my_choice_2
                 computer_bead += my_choice_2
+
+                # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
+
+                if my_bead < 0:
+                    my_bead = 0
+                if computer_bead < 0 :
+                    computer_bead = 0
+                if my_bead > 20:
+                    my_bead = 20 
+                if computer_bead > 20:
+                    computer_bead = 20
+
                 print(f"""
 당신이 틀렸습니다. 내가 배팅한 구슬은 {my_choice_2}개입니다. 
 당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
@@ -243,6 +291,18 @@ while running:
             if answer == my_selection:
                 my_bead += my_choice_2
                 computer_bead -= my_choice_2
+
+                # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
+
+                if my_bead < 0:
+                    my_bead = 0
+                if computer_bead < 0 :
+                    computer_bead = 0
+                if my_bead > 20:
+                    my_bead = 20 
+                if computer_bead > 20:
+                    computer_bead = 20
+
                 print(f"""
 당신이 맞췄습니다. 내가 배팅한 구슬은 {my_choice_2}개입니다. 
 당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
@@ -252,6 +312,18 @@ while running:
             else:
                 my_bead -= my_choice_2
                 computer_bead += my_choice_2
+
+                # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
+
+                if my_bead < 0:
+                    my_bead = 0
+                if computer_bead < 0 :
+                    computer_bead = 0
+                if my_bead > 20:
+                    my_bead = 20 
+                if computer_bead > 20:
+                    computer_bead = 20
+
                 print(f"""
 당신이 틀렸습니다. 내가 배팅한 구슬은 {my_choice_2}개입니다. 
 당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
@@ -293,6 +365,18 @@ while running:
             if answer == computer_choice_hz[0]:
                 my_bead -= computer_nums[0]
                 computer_bead += computer_nums[0]
+
+                # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
+
+                if my_bead < 0:
+                    my_bead = 0
+                if computer_bead < 0 :
+                    computer_bead = 0
+                if my_bead > 20:
+                    my_bead = 20 
+                if computer_bead > 20:
+                    computer_bead = 20
+
                 print(f"""
 컴퓨터가 맞췄습니다. 컴퓨터가 배팅한 구슬은 {computer_nums[0]}개입니다. 
 당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
@@ -302,6 +386,18 @@ while running:
             else:
                 my_bead += computer_nums[0]
                 computer_bead -= computer_nums[0]
+
+                # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
+
+                if my_bead < 0:
+                    my_bead = 0
+                if computer_bead < 0 :
+                    computer_bead = 0
+                if my_bead > 20:
+                    my_bead = 20 
+                if computer_bead > 20:
+                    computer_bead = 20
+                    
                 print(f"""
 컴퓨터가 틀렸습니다. 컴퓨터가 배팅한 구슬은 {computer_nums[0]}개입니다. 
 당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
