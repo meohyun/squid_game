@@ -10,11 +10,11 @@ attack_turn = True
 
 #  선공,후공 정하기
 print("구슬치기 게임을 시작하겠습니다.")
-
+print()
 # time.sleep(2)
 
 print("시작하기에 앞서 가위바위보로 순서를 정하겠습니다.")
-
+print()
 # time.sleep(2)
 
 
@@ -27,7 +27,7 @@ while running:
     Rsp_choice = random.sample(Rsp,1)
     F_L = ['선공' , '후공']
     computer_choice = random.sample(F_L,1)
-
+    print()
 
     if rsp == Rsp_choice[0]:
         print("비겼으므로 다시 내주세요.")
@@ -494,89 +494,13 @@ while running:
             # 턴이 바뀜
             else:
                 my_choices = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
-            print()
-
-
-            if my_choices > my_bead:
-                print("소유한 구슬의 갯수보다 많이 걸수 없습니다.")
-                continue
-            print()
-
-            if my_choices <= 0 :
-                print("0과 음수는 입력할 수 없습니다.")
-                continue
-            print()
-
-
-            print(f"""
-당신은 {my_choices}개를 선택하셨습니다.
-컴퓨터가 선택할 동안 기다려 주세요!
-            """)
-            time.sleep(2)
-
-            # 홀 짝 맞는지 확인
-            if my_choices % 2 == 0:
-                answer = '짝'
-            else:
-                answer = '홀'
-
-            print(f"컴퓨터의 선택은 {computer_choice_hz[0]} 입니다.")
-
-            time.sleep(2)
-
-            if answer == computer_choice_hz[0]:
-                my_bead -= computer_nums[0]
-                computer_bead += computer_nums[0]
-
-                # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
-
-                if my_bead < 0:
-                    my_bead = 0
-                if computer_bead < 0 :
-                    computer_bead = 0
-                if my_bead > 20:
-                    my_bead = 20 
-                if computer_bead > 20:
-                    computer_bead = 20
-
-                print(f"""
-컴퓨터가 맞췄습니다. 컴퓨터가 배팅한 구슬은 {computer_nums[0]}개입니다. 
-당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
-""")
-
-                
-            else:
-                my_bead += computer_nums[0]
-                computer_bead -= computer_nums[0]
-
-                # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
-
-                if my_bead < 0:
-                    my_bead = 0
-                if computer_bead < 0 :
-                    computer_bead = 0
-                if my_bead > 20:
-                    my_bead = 20 
-                if computer_bead > 20:
-                    computer_bead = 20
-                    
-                print(f"""
-컴퓨터가 틀렸습니다. 컴퓨터가 배팅한 구슬은 {computer_nums[0]}개입니다. 
-당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
-""")
-                attack_turn = True
-
-
-                
-        if computer_choice[0] == '후공':
-            if attack_turn:
-                my_choices = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
                 print()
 
 
                 if my_choices > my_bead:
                     print("소유한 구슬의 갯수보다 많이 걸수 없습니다.")
                     continue
+                
                 print()
 
                 if my_choices <= 0 :
@@ -640,6 +564,83 @@ while running:
                     print(f"""
     컴퓨터가 틀렸습니다. 컴퓨터가 배팅한 구슬은 {computer_nums[0]}개입니다. 
     당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
+    """)
+                    attack_turn = True
+
+
+                
+        if computer_choice[0] == '후공':
+            if attack_turn:
+                my_choices = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
+                print()
+
+
+                if my_choices > my_bead:
+                    print("소유한 구슬의 갯수보다 많이 걸수 없습니다.")
+                    continue
+                print()
+
+                if my_choices <= 0 :
+                    print("0과 음수는 입력할 수 없습니다.")
+                    continue
+                print()
+
+
+                print(f"""
+당신은 {my_choices}개를 선택하셨습니다.
+컴퓨터가 선택할 동안 기다려 주세요!
+                """)
+                time.sleep(2)
+
+                # 홀 짝 맞는지 확인
+                if my_choices % 2 == 0:
+                    answer = '짝'
+                else:
+                    answer = '홀'
+
+                print(f"컴퓨터의 선택은 {computer_choice_hz[0]} 입니다.")
+
+                time.sleep(2)
+
+                if answer == computer_choice_hz[0]:
+                    my_bead -= computer_nums[0]
+                    computer_bead += computer_nums[0]
+
+                    # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
+
+                    if my_bead < 0:
+                        my_bead = 0
+                    if computer_bead < 0 :
+                        computer_bead = 0
+                    if my_bead > 20:
+                        my_bead = 20 
+                    if computer_bead > 20:
+                        computer_bead = 20
+
+                    print(f"""
+컴퓨터가 맞췄습니다. 컴퓨터가 배팅한 구슬은 {computer_nums[0]}개입니다. 
+당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
+    """)
+
+                    
+                else:
+                    my_bead += computer_nums[0]
+                    computer_bead -= computer_nums[0]
+
+                    # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
+
+                    if my_bead < 0:
+                        my_bead = 0
+                    if computer_bead < 0 :
+                        computer_bead = 0
+                    if my_bead > 20:
+                        my_bead = 20 
+                    if computer_bead > 20:
+                        computer_bead = 20
+                        
+                    print(f"""
+컴퓨터가 틀렸습니다. 컴퓨터가 배팅한 구슬은 {computer_nums[0]}개입니다. 
+당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
     """)
                 attack_turn = False
             # 턴이 바뀜
