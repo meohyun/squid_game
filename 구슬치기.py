@@ -128,6 +128,7 @@ while running:
                 if answer == computer_choice_hz[0]:
                     my_bead -= computer_nums[0]
                     computer_bead += computer_nums[0]
+            
 
                     # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
 
