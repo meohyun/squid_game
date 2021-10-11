@@ -11,11 +11,11 @@ attack_turn = True
 #  선공,후공 정하기
 print("구슬치기 게임을 시작하겠습니다.")
 print()
-# time.sleep(2)
+time.sleep(2)
 
 print("시작하기에 앞서 가위바위보로 순서를 정하겠습니다.")
 print()
-# time.sleep(2)
+time.sleep(2)
 
 
 # 가위바위보 
