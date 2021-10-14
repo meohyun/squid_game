@@ -8,7 +8,7 @@ attack_turn = True
 
 print("구슬치기 게임을 시작하겠습니다.")
 print()
-time.sleep(2)
+# time.sleep(2)
 
 # 구슬치기 룰 설명
 print("구슬치기의 룰을 설명하겠습니다.")
@@ -89,6 +89,7 @@ while running:
     computer_nums = random.sample(nums,1)
     choice = ['홀','짝']
     computer_choice_hz = random.sample(choice,1)
+    computer_num_refresh = []
     
     # 구슬치기 선,후공에 따라 다름
     try :
@@ -108,6 +109,12 @@ while running:
                     print("0과 음수는 입력할 수 없습니다.")
                     continue
                 print()
+
+                if computer_nums[0] > computer_bead:
+                        for i in range(1,computer_bead):
+                            computer_num_refresh.append(i)
+                            number = random.sample(computer_num_refresh,1)
+                        computer_nums[0] = number[0]
 
                 
                 print(f"""
@@ -142,6 +149,7 @@ while running:
                         my_bead = 20 
                     if computer_bead > 20:
                         computer_bead = 20
+
                         
                     print(f"""
 컴퓨터가 맞췄습니다. 컴퓨터가 배팅한 구슬은 {computer_nums[0]}개입니다. 
@@ -197,6 +205,12 @@ while running:
                 print("컴퓨터가 구슬의 갯수를 정하는 중입니다. 기다려 주세요.")
                 time.sleep(2)
 
+                if computer_nums[0] > computer_bead:
+                        for i in range(1,computer_bead):
+                            computer_num_refresh.append(i)
+                            number = random.sample(computer_num_refresh,1)
+                        computer_nums[0] = number[0]
+
 
                 if int(computer_nums[0]) % 2 == 0:
                     answer = '짝'
@@ -223,6 +237,7 @@ while running:
                         my_bead = 20 
                     if computer_bead > 20:
                         computer_bead = 20
+
 
                     print(f"""
 당신이 맞췄습니다. 내가 배팅한 구슬은 {my_choice_2}개입니다. 
@@ -278,6 +293,12 @@ while running:
 
                 print("컴퓨터가 구슬의 갯수를 정하는 중입니다. 기다려 주세요.")
                 time.sleep(2)
+
+                if computer_nums[0] > computer_bead:
+                        for i in range(1,computer_bead):
+                            computer_num_refresh.append(i)
+                            number = random.sample(computer_num_refresh,1)
+                        computer_nums[0] = number[0]
 
                 if int(computer_nums[0]) % 2 == 0:
                     answer = '짝'
@@ -349,6 +370,12 @@ while running:
                     print("0과 음수는 입력할 수 없습니다.")
                     continue
                 print()
+
+                if computer_nums[0] > computer_bead:
+                        for i in range(1,computer_bead):
+                            computer_num_refresh.append(i)
+                            number = random.sample(computer_num_refresh,1)
+                        computer_nums[0] = number[0]
 
                 
                 print(f"""
@@ -440,6 +467,12 @@ while running:
                 print("컴퓨터가 구슬의 갯수를 정하는 중입니다. 기다려 주세요.")
                 time.sleep(2)
 
+                if computer_nums[0] > computer_bead:
+                        for i in range(1,computer_bead):
+                            computer_num_refresh.append(i)
+                            number = random.sample(computer_num_refresh,1)
+                        computer_nums[0] = number[0]
+
             
                 if int(computer_nums[0]) % 2 == 0:
                     answer = '짝'
@@ -510,6 +543,12 @@ while running:
                     print("0과 음수는 입력할 수 없습니다.")
                     continue
                 print()
+
+                if computer_nums[0] > computer_bead:
+                        for i in range(1,computer_bead):
+                            computer_num_refresh.append(i)
+                            number = random.sample(computer_num_refresh,1)
+                        computer_nums[0] = number[0]
 
 
                 print(f"""
@@ -587,6 +626,12 @@ while running:
                     print("0과 음수는 입력할 수 없습니다.")
                     continue
                 print()
+
+                if computer_nums[0] > computer_bead:
+                        for i in range(1,computer_bead):
+                            computer_num_refresh.append(i)
+                            number = random.sample(computer_num_refresh,1)
+                        computer_nums[0] = number[0]
 
 
                 print(f"""
@@ -672,6 +717,12 @@ while running:
 
                 print("컴퓨터가 구슬의 갯수를 정하는 중입니다. 기다려 주세요.")
                 time.sleep(2)
+
+                if computer_nums[0] > computer_bead:
+                        for i in range(1,computer_bead):
+                            computer_num_refresh.append(i)
+                            number = random.sample(computer_num_refresh,1)
+                        computer_nums[0] = number[0]
 
             
                 if int(computer_nums[0]) % 2 == 0:
