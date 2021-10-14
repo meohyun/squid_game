@@ -8,7 +8,7 @@ attack_turn = True
 
 print("구슬치기 게임을 시작하겠습니다.")
 print()
-# time.sleep(2)
+time.sleep(2)
 
 # 구슬치기 룰 설명
 print("구슬치기의 룰을 설명하겠습니다.")
@@ -25,7 +25,7 @@ print("""
 # 가위바위보로 순서 정하기
 print("시작하기에 앞서 가위바위보로 순서를 정하겠습니다.")
 print()
-# time.sleep(2)
+time.sleep(2)
 
 
 
