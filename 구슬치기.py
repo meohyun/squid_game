@@ -40,6 +40,10 @@ while running:
     computer_choice = random.sample(F_L,1)
     print()
 
+    if rsp != '가위' and rsp != '바위' and rsp != '보':
+        print("가위,바위,보 중 하나만 입력하세요.")
+        continue
+
     if rsp == Rsp_choice[0]:
         print("비겼으므로 다시 내주세요.")
         continue
@@ -52,8 +56,10 @@ while running:
 
     if rsp == '가위' and Rsp_choice[0] == '바위':
         print("졌습니다. 컴퓨터가 선,후공중 정합니다.")
+        print()
         time.sleep(2)
         print(f" 컴퓨터가 {computer_choice[0]}입니다.")
+        print()
         
 
     if rsp == '바위' and Rsp_choice[0] == '가위':
@@ -65,7 +71,9 @@ while running:
     if rsp == '바위' and Rsp_choice[0] == '보':
         print("졌습니다. 컴퓨터가 선,후공중 정합니다.")
         time.sleep(2)
+        print()
         print(f"컴퓨터가 {computer_choice[0]}입니다.")
+        print()
         
 
     if rsp == '보' and Rsp_choice[0] == '바위':
@@ -76,8 +84,10 @@ while running:
 
     if rsp == '보' and Rsp_choice[0] == '가위':
         print("졌습니다. 컴퓨터가 선,후공중 정합니다.")
+        print()
         time.sleep(2)
         print(f"컴퓨터가 {computer_choice[0]}입니다.")
+        print()
        
     break    
 
@@ -98,7 +108,7 @@ while running:
                 my_choices = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
                 
                 print()
-
+                
                 
                 if my_choices > my_bead:
                     print("소유한 구슬의 갯수보다 많이 걸수 없습니다.")
