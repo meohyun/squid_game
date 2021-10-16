@@ -105,10 +105,13 @@ while running:
     try :
         if my_choice == '선공':
             if attack_turn :
-                my_choices = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
-                
-                print()
-                
+
+                try:
+                    my_choices = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
+                    print()
+                except ValueError:
+                    print("정수만 입력하세요.")
+                    continue
                 
                 if my_choices > my_bead:
                     print("소유한 구슬의 갯수보다 많이 걸수 없습니다.")
@@ -120,7 +123,7 @@ while running:
                     continue
                 print()
 
-                if computer_nums[0] > computer_bead:
+                if computer_nums[0] >= computer_bead:
                         for i in range(1,computer_bead):
                             computer_num_refresh.append(i)
                             number = random.sample(computer_num_refresh,1)
@@ -198,9 +201,13 @@ while running:
                     continue
                 print()
 
-                my_choice_2 = int(input("배팅할 구슬의 갯수를 정해주세요 : "))
-                print()
-                
+                try:
+                    my_choice_2 = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
+                    print()
+                except ValueError:
+                    print("정수만 입력하세요.")
+                    continue
+
                 
                 if my_choice_2 > my_bead:
                     print("소유한 구슬의 갯수보다 많이 걸수 없습니다.")
@@ -215,7 +222,7 @@ while running:
                 print("컴퓨터가 구슬의 갯수를 정하는 중입니다. 기다려 주세요.")
                 time.sleep(2)
 
-                if computer_nums[0] > computer_bead:
+                if computer_nums[0] >= computer_bead:
                         for i in range(1,computer_bead):
                             computer_num_refresh.append(i)
                             number = random.sample(computer_num_refresh,1)
@@ -287,8 +294,12 @@ while running:
                     continue
                 print()
 
-                my_choice_2 = int(input("배팅할 구슬의 갯수를 정해주세요 : "))
-                print()
+                try:
+                    my_choice_2 = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
+                    print()
+                except ValueError:
+                    print("정수만 입력하세요.")
+                    continue
                 
                 
                 if my_choice_2 > my_bead:
@@ -304,7 +315,7 @@ while running:
                 print("컴퓨터가 구슬의 갯수를 정하는 중입니다. 기다려 주세요.")
                 time.sleep(2)
 
-                if computer_nums[0] > computer_bead:
+                if computer_nums[0] >= computer_bead:
                         for i in range(1,computer_bead):
                             computer_num_refresh.append(i)
                             number = random.sample(computer_num_refresh,1)
@@ -366,9 +377,12 @@ while running:
             
             # 턴이 바뀜
             else:
-                my_choices = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
-                
-                print()
+                try:
+                    my_choices = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
+                    print()
+                except ValueError:
+                    print("정수만 입력하세요.")
+                    continue
 
                 
                 if my_choices > my_bead:
@@ -381,7 +395,9 @@ while running:
                     continue
                 print()
 
-                if computer_nums[0] > computer_bead:
+                
+
+                if computer_nums[0] >= computer_bead:
                         for i in range(1,computer_bead):
                             computer_num_refresh.append(i)
                             number = random.sample(computer_num_refresh,1)
@@ -460,8 +476,12 @@ while running:
                     continue
                 print()
 
-                my_choice_2 = int(input("배팅할 구슬의 갯수를 정해주세요 : "))
-                print()
+                try:
+                    my_choice_2 = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
+                    print()
+                except ValueError:
+                    print("정수만 입력하세요.")
+                    continue
 
                 
                 if my_choice_2 > my_bead:
@@ -477,7 +497,7 @@ while running:
                 print("컴퓨터가 구슬의 갯수를 정하는 중입니다. 기다려 주세요.")
                 time.sleep(2)
 
-                if computer_nums[0] > computer_bead:
+                if computer_nums[0] >= computer_bead:
                         for i in range(1,computer_bead):
                             computer_num_refresh.append(i)
                             number = random.sample(computer_num_refresh,1)
@@ -539,9 +559,12 @@ while running:
 
             # 턴이 바뀜
             else:
-                my_choices = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
-                print()
-
+                try:
+                    my_choices = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
+                    print()
+                except ValueError:
+                    print("정수만 입력하세요.")
+                    continue
 
                 if my_choices > my_bead:
                     print("소유한 구슬의 갯수보다 많이 걸수 없습니다.")
@@ -554,7 +577,7 @@ while running:
                     continue
                 print()
 
-                if computer_nums[0] > computer_bead:
+                if computer_nums[0] >= computer_bead:
                         for i in range(1,computer_bead):
                             computer_num_refresh.append(i)
                             number = random.sample(computer_num_refresh,1)
@@ -623,8 +646,12 @@ while running:
                 
         if computer_choice[0] == '후공':
             if attack_turn:
-                my_choices = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
-                print()
+                try:
+                    my_choices = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
+                    print()
+                except ValueError:
+                    print("정수만 입력하세요.")
+                    continue
 
 
                 if my_choices > my_bead:
@@ -637,7 +664,7 @@ while running:
                     continue
                 print()
 
-                if computer_nums[0] > computer_bead:
+                if computer_nums[0] >= computer_bead:
                         for i in range(1,computer_bead):
                             computer_num_refresh.append(i)
                             number = random.sample(computer_num_refresh,1)
@@ -711,8 +738,12 @@ while running:
                     continue
                 print()
 
-                my_choice_2 = int(input("배팅할 구슬의 갯수를 정해주세요 : "))
-                print()
+                try:
+                    my_choice_2 = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
+                    print()
+                except ValueError:
+                    print("정수만 입력하세요.")
+                    continue
 
                 
                 if my_choice_2 > my_bead:
@@ -728,7 +759,7 @@ while running:
                 print("컴퓨터가 구슬의 갯수를 정하는 중입니다. 기다려 주세요.")
                 time.sleep(2)
 
-                if computer_nums[0] > computer_bead:
+                if computer_nums[0] >= computer_bead:
                         for i in range(1,computer_bead):
                             computer_num_refresh.append(i)
                             number = random.sample(computer_num_refresh,1)
