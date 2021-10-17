@@ -1,6 +1,6 @@
 # squid_game
 
-I made a playing marbles game in "squid game(Netfilx Korean Drama)" with python.
+I made a playing marbles game in "Squid Game(Netfilx Korean Drama)" with python.
 
 This game is console game. Just text :)
 
