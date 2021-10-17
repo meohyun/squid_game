@@ -6,132 +6,124 @@ my_bead = 10
 computer_bead = 10
 attack_turn = True
 
-print("구슬치기 게임을 시작하겠습니다.")
+print("Let's start the playing marbles ")
 print()
-# time.sleep(2)
 
-# 구슬치기 룰 설명
-print("구슬치기의 룰을 설명하겠습니다.")
+print("I'll explain the rules of playing marbles.")
 
 print()
 print(""" 
-각 플레이어들은 10개씩의 구슬을 가지고 시작합니다.
-선공인 플레이어가 구슬을 몇개 움켜쥘지 정합니다. 
-그리고 후공인 플레이어가 자신의 구슬을 배팅합니다. 그 다음 구슬의 갯수가 홀인지 짝인지 말합니다.
-맞추게되면 배팅한 갯수만큼 상대의 구슬을 후공인 플레이어가 가지고 틀리게되면 선공인 플레이어가 갖습니다.
-한 사람이 모든 구슬을 잃을 경우 게임은 종료되며 20개의 구슬을 가진 플레이어가 승리합니다.
+Each player starts with 10 beads.
+Decide how many beads the first-man player will grab.
+And a junior player bets on his marble. Next, it refers to whether the number of beads is a hole or a pair.
+If you get it right, the player who made the opponent's marble as many times as the number of bets will get it, and if it's wrong, the player who made the first gets it.
+If one person loses all the beads, the game is over.
     """)
 
-# 가위바위보로 순서 정하기
-print("시작하기에 앞서 가위바위보로 순서를 정하겠습니다.")
+print("Before we start, we will decide the order by rock-paper-scissors.")
 print()
 time.sleep(2)
 
 
-
-# 가위바위보 
+# Rock,Scissors,Paper
 
 while running:
-    # 가위바위보
-    rsp = input("무엇을 내시겠습니까?(가위,바위,보 중 선택): ")
-    Rsp = ['가위','바위','보']
+
+    rsp = input("What would you like to release? (Choose between scissors, rock, paper): ")
+    Rsp = ['rock','scissors','paper']
     Rsp_choice = random.sample(Rsp,1)
-    F_L = ['선공' , '후공']
+    F_L = ['first' , 'later']
     computer_choice = random.sample(F_L,1)
     print()
 
-    if rsp != '가위' and rsp != '바위' and rsp != '보':
-        print("가위,바위,보 중 하나만 입력하세요.")
+    if rsp != 'scissors' and rsp != 'rock' and rsp != 'paper':
+        print("Enter only one of rock, paper, scissors.")
         continue
 
     if rsp == Rsp_choice[0]:
-        print("비겼으므로 다시 내주세요.")
+        print("It's a tie, so please release it again.")
         continue
 
-    if rsp == '가위' and Rsp_choice[0] == '보':
-        my_choice = input("이겼습니다. 선공,후공 중 하나를 선택해주세요 : ")
+    if rsp == 'scissors' and Rsp_choice[0] == 'paper':
+        my_choice = input("You won. Please choose between first and later: ")
         print()
-        if my_choice != '선공' and my_choice != '후공':
-            print("선공 또는 후공만 입력해주세요.")
+        if my_choice != 'first' and my_choice != 'later':
+            print("Please enter only first or later!")
             continue
         print()
-        print(f"당신이 {my_choice}입니다.")
+        print(f"You are the {my_choice}.")
     
 
-    if rsp == '가위' and Rsp_choice[0] == '바위':
-        print("졌습니다. 컴퓨터가 선,후공중 정합니다.")
+    if rsp == 'scissors' and Rsp_choice[0] == 'rock':
+        print("You lost. The computer decides first and later.")
         print()
         time.sleep(2)
-        print(f" 컴퓨터가 {computer_choice[0]}입니다.")
+        print(f" Computer is the {computer_choice[0]}.")
         print()
         
-
-    if rsp == '바위' and Rsp_choice[0] == '가위':
-        my_choice = input("이겼습니다. 선공,후공 중 하나를 선택해주세요 : ")
+    if rsp == 'rock' and Rsp_choice[0] == 'scissors':
+        my_choice = input("You won. Please choose between first and later: ")
         print()
-        if my_choice != '선공' and my_choice != '후공':
-            print("선공 또는 후공만 입력해주세요.")
+        if my_choice != 'first' and my_choice != 'later':
+            print("Please enter only first or later!")
             continue
-        print()    
-        print(f"당신이 {my_choice}입니다.")
+        print()
+        print(f"You are the {my_choice}.")
        
-
-    if rsp == '바위' and Rsp_choice[0] == '보':
-        print("졌습니다. 컴퓨터가 선,후공중 정합니다.")
+    if rsp == 'rock' and Rsp_choice[0] == 'paper':
+        print("You lost. The computer decides first and later.")
+        print()
         time.sleep(2)
+        print(f" Computer is the {computer_choice[0]}.")
         print()
-        print(f"컴퓨터가 {computer_choice[0]}입니다.")
-        print()
-        
 
-    if rsp == '보' and Rsp_choice[0] == '바위':
-        my_choice = input("이겼습니다. 선공,후공 중 하나를 선택해주세요 : ")
+    if rsp == 'paper' and Rsp_choice[0] == 'rock':
+        my_choice = input("You won. Please choose between first and later: ")
         print()
-        if my_choice != '선공' and my_choice != '후공':
-            print("선공 또는 후공만 입력해주세요.")
+        if my_choice != 'first' and my_choice != 'later':
+            print("Please enter only first or later!")
             continue
         print()
-        print(f"당신이 {my_choice}입니다.")
+        print(f"You are the {my_choice}.")
         
 
-    if rsp == '보' and Rsp_choice[0] == '가위':
-        print("졌습니다. 컴퓨터가 선,후공중 정합니다.")
+    if rsp == 'paper' and Rsp_choice[0] == 'scissors':
+        print("You lost. The computer decides first or later.")
         print()
         time.sleep(2)
-        print(f"컴퓨터가 {computer_choice[0]}입니다.")
+        print(f" Computer is the {computer_choice[0]}.")
         print()
        
     break    
 
 
-# 구슬치기
+# Playing marbles.
 
 while running:
     nums = [1,2,3,4,5,6,7,8,9,10]
     computer_nums = random.sample(nums,1)
-    choice = ['홀','짝']
+    choice = ['odd','even']
     computer_choice_hz = random.sample(choice,1)
     computer_num_refresh = []
     
-    # 구슬치기 선,후공에 따라 다름
     try :
-        if my_choice == '선공':
+        if my_choice == 'first':
             if attack_turn :
 
                 try:
-                    my_choices = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
+                    my_choices = int(input("Please decide the number of beads (input only the number): "))
                     print()
                 except ValueError:
-                    print("정수만 입력하세요.")
+                    print("Just enter the number.")
                     continue
                 
                 if my_choices > my_bead:
-                    print("소유한 구슬의 갯수보다 많이 걸수 없습니다.")
+                    print("You can't bet more than the number of beads you own.")
                     continue
                 print()
                 
                 if my_choices <= 0 :
-                    print("0과 음수는 입력할 수 없습니다.")
+                    print("Zero and negative numbers cannot be entered.")
                     continue
                 print()
 
@@ -143,20 +135,20 @@ while running:
 
                 
                 print(f"""
-당신은 {my_choices}개를 선택하셨습니다.
-컴퓨터가 선택할 동안 기다려 주세요!
+You have chosen {my_choices}.
+Please wait for the computer to choose!
                 """)
                 time.sleep(2)
 
                 print(f"""
-컴퓨터의 선택은 {computer_choice_hz[0]} 입니다.
+The choice of computer is {computer_choice_hz[0]}.                
                 """)
 
-                # 홀 짝 맞는지 확인
+                # Make sure it's odd or even.
                 if my_choices % 2 == 0:
-                    answer = '짝'
+                    answer = 'even'
                 else:
-                    answer = '홀'
+                    answer = 'odd'
                 
 
                 if answer == computer_choice_hz[0]:
@@ -164,7 +156,7 @@ while running:
                     computer_bead += computer_nums[0]
             
 
-                    # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
+                    # Initialize if the number of beads is negative or more than 20.
 
                     if my_bead < 0:
                         my_bead = 0
@@ -177,8 +169,8 @@ while running:
 
                         
                     print(f"""
-컴퓨터가 맞췄습니다. 컴퓨터가 배팅한 구슬은 {computer_nums[0]}개입니다. 
-당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
+The computer got it right. There are {computer_nums[0]} beads bet by the computer.
+The number of your beads is {my_bead}. The number of beads on the computer is {computer_bead}.
                     """)
                 
 
@@ -186,7 +178,7 @@ while running:
                     my_bead += computer_nums[0]
                     computer_bead -= computer_nums[0]
 
-                    # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
+                    # Initialize if the number of beads is negative or more than 20.
 
                     if my_bead < 0:
                         my_bead = 0
@@ -198,40 +190,39 @@ while running:
                         computer_bead = 20
 
                     print(f"""
-컴퓨터가 틀렸습니다. 컴퓨터가 배팅한 구슬은 {computer_nums[0]}개입니다. 
-당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
+The computer is wrong. There are {computer_nums[0]} beads bet by the computer.
+The number of your beads is {my_bead}. The number of beads on the computer is {computer_bead}.
                     """)
                 attack_turn = False
-
-            # 다음턴으로 넘어감.        
+ 
             else:
-                my_selection = input("홀,짝 중 정해주세요 : ")
+                my_selection = input("Choose odd or even: ")
                 print()
                 
-                if my_selection != '홀' and my_selection != '짝':
-                    print("홀,짝만 입력해주세요.")
+                if my_selection != 'odd' and my_selection != 'even':
+                    print("Please enter only odd or even.")
                     continue
                 print()
 
                 try:
-                    my_choice_2 = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
+                    my_choice_2 = int(input("Please decide the number of beads (input only the number): "))
                     print()
                 except ValueError:
-                    print("정수만 입력하세요.")
+                    print("Just enter the number.")
                     continue
 
                 
                 if my_choice_2 > my_bead:
-                    print("소유한 구슬의 갯수보다 많이 걸수 없습니다.")
+                    print("You can't bet more than the number of beads you own.")
                     continue
                 print()
 
                 if my_choice_2 <= 0 :
-                    print("0과 음수는 입력할 수 없습니다.")
+                    print("Zero and negative numbers cannot be entered.")
                     continue
                 print()
 
-                print("컴퓨터가 구슬의 갯수를 정하는 중입니다. 기다려 주세요.")
+                print("The computer is determining the number of beads. Please wait.")
                 time.sleep(2)
 
                 if computer_nums[0] >= computer_bead:
@@ -242,13 +233,13 @@ while running:
 
 
                 if int(computer_nums[0]) % 2 == 0:
-                    answer = '짝'
+                    answer = 'even'
                 
                 else:
-                    answer = '홀'
+                    answer = 'odd'
 
 
-                print(f"컴퓨터의 구슬은 {computer_nums[0]}개 였습니다.")
+                print(f"The computer made {computer_nums[0]} beads.")
                 time.sleep(2)
 
 
@@ -256,7 +247,6 @@ while running:
                     my_bead += my_choice_2
                     computer_bead -= my_choice_2
 
-                    # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
 
                     if my_bead < 0:
                         my_bead = 0
@@ -269,8 +259,8 @@ while running:
 
 
                     print(f"""
-당신이 맞췄습니다. 내가 배팅한 구슬은 {my_choice_2}개입니다. 
-당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
+You got it right. You bet {my_choice_2} beads.
+The number of your beads is {my_bead}. The number of beads on the computer is {computer_bead}.
                     """)
                 
                 
@@ -278,7 +268,6 @@ while running:
                     my_bead -= my_choice_2
                     computer_bead += my_choice_2
 
-                    # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
 
                     if my_bead < 0:
                         my_bead = 0
@@ -290,41 +279,41 @@ while running:
                         computer_bead = 20
 
                     print(f"""
-당신이 틀렸습니다. 내가 배팅한 구슬은 {my_choice_2}개입니다. 
-당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
+You're wrong. You bet {my_choice_2} beads.
+The number of your beads is {my_bead}. The number of beads on the computer is {computer_bead}.
                     """)
                 attack_turn = True
 
 
-        if my_choice == '후공':
+        if my_choice == 'later':
             if attack_turn:
-                my_selection = input("홀,짝 중 정해주세요 : ")
+                my_selection = input("Choose odd or even: ")
                 print()
                 
-                if my_selection != '홀' and my_selection != '짝':
-                    print("홀,짝만 입력해주세요.")
+                if my_selection != 'odd' and my_selection != 'even':
+                    print("Please enter only odd or even.")
                     continue
                 print()
 
                 try:
-                    my_choice_2 = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
+                    my_choice_2 = int(input("Please decide the number of beads (input only the number): "))
                     print()
                 except ValueError:
-                    print("정수만 입력하세요.")
+                    print("Just enter the number.")
                     continue
-                
+
                 
                 if my_choice_2 > my_bead:
-                    print("소유한 구슬의 갯수보다 많이 걸수 없습니다.")
+                    print("You can't bet more than the number of beads you own.")
                     continue
                 print()
 
                 if my_choice_2 <= 0 :
-                    print("0과 음수는 입력할 수 없습니다.")
+                    print("Zero and negative numbers cannot be entered.")
                     continue
                 print()
 
-                print("컴퓨터가 구슬의 갯수를 정하는 중입니다. 기다려 주세요.")
+                print("The computer is determining the number of beads. Please wait.")
                 time.sleep(2)
 
                 if computer_nums[0] >= computer_bead:
@@ -333,13 +322,15 @@ while running:
                             number = random.sample(computer_num_refresh,1)
                         computer_nums[0] = number[0]
 
+
                 if int(computer_nums[0]) % 2 == 0:
-                    answer = '짝'
+                    answer = 'even'
                 
                 else:
-                    answer = '홀'
+                    answer = 'odd'
 
-                print(f"컴퓨터의 구슬은 {computer_nums[0]}개 였습니다.")
+
+                print(f"The computer made {computer_nums[0]} beads.")
                 time.sleep(2)
 
 
@@ -347,7 +338,6 @@ while running:
                     my_bead += my_choice_2
                     computer_bead -= my_choice_2
 
-                    # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
 
                     if my_bead < 0:
                         my_bead = 0
@@ -358,18 +348,17 @@ while running:
                     if computer_bead > 20:
                         computer_bead = 20
 
+
                     print(f"""
-당신이 맞췄습니다. 내가 배팅한 구슬은 {my_choice_2}개입니다. 
-당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
+You got it right. You bet {my_choice_2} beads.
+The number of your beads is {my_bead}. The number of beads on the computer is {computer_bead}.
                     """)
                 
-
                 
                 else:
                     my_bead -= my_choice_2
                     computer_bead += my_choice_2
 
-                    # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
 
                     if my_bead < 0:
                         my_bead = 0
@@ -381,33 +370,28 @@ while running:
                         computer_bead = 20
 
                     print(f"""
-당신이 틀렸습니다. 내가 배팅한 구슬은 {my_choice_2}개입니다. 
-당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
+You're wrong. You bet {my_choice_2} beads.
+The number of your beads is {my_bead}. The number of beads on the computer is {computer_bead}.
                     """)
-
                 attack_turn = False
             
-            # 턴이 바뀜
             else:
                 try:
-                    my_choices = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
+                    my_choices = int(input("Please decide the number of beads (input only the number): "))
                     print()
                 except ValueError:
-                    print("정수만 입력하세요.")
+                    print("Just enter the number.")
                     continue
-
                 
                 if my_choices > my_bead:
-                    print("소유한 구슬의 갯수보다 많이 걸수 없습니다.")
+                    print("You can't bet more than the number of beads you own.")
                     continue
                 print()
                 
                 if my_choices <= 0 :
-                    print("0과 음수는 입력할 수 없습니다.")
+                    print("Zero and negative numbers cannot be entered.")
                     continue
                 print()
-
-                
 
                 if computer_nums[0] >= computer_bead:
                         for i in range(1,computer_bead):
@@ -417,27 +401,26 @@ while running:
 
                 
                 print(f"""
-당신은 {my_choices}개를 선택하셨습니다.
-컴퓨터가 선택할 동안 기다려 주세요!
+You have chosen {my_choices}.
+Please wait for the computer to choose!
                 """)
                 time.sleep(2)
 
                 print(f"""
-컴퓨터의 선택은 {computer_choice_hz[0]} 입니다.
+The choice of computer is {computer_choice_hz[0]}.                
                 """)
 
-                # 홀 짝 맞는지 확인
                 if my_choices % 2 == 0:
-                    answer = '짝'
+                    answer = 'even'
                 else:
-                    answer = '홀'
+                    answer = 'odd'
                 
 
                 if answer == computer_choice_hz[0]:
                     my_bead -= computer_nums[0]
                     computer_bead += computer_nums[0]
+            
 
-                    # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
 
                     if my_bead < 0:
                         my_bead = 0
@@ -447,10 +430,11 @@ while running:
                         my_bead = 20 
                     if computer_bead > 20:
                         computer_bead = 20
+
                         
                     print(f"""
-컴퓨터가 맞췄습니다. 컴퓨터가 배팅한 구슬은 {computer_nums[0]}개입니다. 
-당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
+The computer got it right. There are {computer_nums[0]} beads bet by the computer.
+The number of your beads is {my_bead}. The number of beads on the computer is {computer_bead}.
                     """)
                 
 
@@ -458,7 +442,6 @@ while running:
                     my_bead += computer_nums[0]
                     computer_bead -= computer_nums[0]
 
-                    # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
 
                     if my_bead < 0:
                         my_bead = 0
@@ -470,43 +453,43 @@ while running:
                         computer_bead = 20
 
                     print(f"""
-컴퓨터가 틀렸습니다. 컴퓨터가 배팅한 구슬은 {computer_nums[0]}개입니다. 
-당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
+The computer is wrong. There are {computer_nums[0]} beads bet by the computer.
+The number of your beads is {my_bead}. The number of beads on the computer is {computer_bead}.
                     """)
                 attack_turn = True
 
                 
 
     except NameError:
-        if computer_choice[0] == '선공':
+        if computer_choice[0] == 'first':
             if attack_turn:
-                my_selection = input("홀,짝 중 정해주세요 : ")
+                my_selection = input("Choose odd or even: ")
                 print()
                 
-                if my_selection != '홀' and my_selection != '짝':
-                    print("홀,짝만 입력해주세요.")
+                if my_selection != 'odd' and my_selection != 'even':
+                    print("Please enter only odd or even.")
                     continue
                 print()
 
                 try:
-                    my_choice_2 = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
+                    my_choice_2 = int(input("Please decide the number of beads (input only the number): "))
                     print()
                 except ValueError:
-                    print("정수만 입력하세요.")
+                    print("Just enter the number.")
                     continue
 
                 
                 if my_choice_2 > my_bead:
-                    print("소유한 구슬의 갯수보다 많이 걸수 없습니다.")
+                    print("You can't bet more than the number of beads you own.")
                     continue
                 print()
 
                 if my_choice_2 <= 0 :
-                    print("0과 음수는 입력할 수 없습니다.")
+                    print("Zero and negative numbers cannot be entered.")
                     continue
                 print()
 
-                print("컴퓨터가 구슬의 갯수를 정하는 중입니다. 기다려 주세요.")
+                print("The computer is determining the number of beads. Please wait.")
                 time.sleep(2)
 
                 if computer_nums[0] >= computer_bead:
@@ -515,15 +498,15 @@ while running:
                             number = random.sample(computer_num_refresh,1)
                         computer_nums[0] = number[0]
 
-            
+
                 if int(computer_nums[0]) % 2 == 0:
-                    answer = '짝'
+                    answer = 'even'
                 
                 else:
-                    answer = '홀'
+                    answer = 'odd'
 
-                print(f"컴퓨터의 구슬은 {computer_nums[0]}개 였습니다.")
 
+                print(f"The computer made {computer_nums[0]} beads.")
                 time.sleep(2)
 
 
@@ -531,7 +514,6 @@ while running:
                     my_bead += my_choice_2
                     computer_bead -= my_choice_2
 
-                    # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
 
                     if my_bead < 0:
                         my_bead = 0
@@ -542,17 +524,17 @@ while running:
                     if computer_bead > 20:
                         computer_bead = 20
 
-                    print(f"""
-당신이 맞췄습니다. 내가 배팅한 구슬은 {my_choice_2}개입니다. 
-당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
-                    """)
 
+                    print(f"""
+You got it right. You bet {my_choice_2} beads.
+The number of your beads is {my_bead}. The number of beads on the computer is {computer_bead}.
+                    """)
+                
                 
                 else:
                     my_bead -= my_choice_2
                     computer_bead += my_choice_2
 
-                    # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
 
                     if my_bead < 0:
                         my_bead = 0
@@ -564,28 +546,27 @@ while running:
                         computer_bead = 20
 
                     print(f"""
-당신이 틀렸습니다. 내가 배팅한 구슬은 {my_choice_2}개입니다. 
-당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
+You're wrong. You bet {my_choice_2} beads.
+The number of your beads is {my_bead}. The number of beads on the computer is {computer_bead}.
                     """)
                 attack_turn = False
 
-            # 턴이 바뀜
+
             else:
                 try:
-                    my_choices = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
+                    my_choices = int(input("Please decide the number of beads (input only the number): "))
                     print()
                 except ValueError:
-                    print("정수만 입력하세요.")
-                    continue
-
-                if my_choices > my_bead:
-                    print("소유한 구슬의 갯수보다 많이 걸수 없습니다.")
+                    print("Just enter the number.")
                     continue
                 
+                if my_choices > my_bead:
+                    print("You can't bet more than the number of beads you own.")
+                    continue
                 print()
-
+                
                 if my_choices <= 0 :
-                    print("0과 음수는 입력할 수 없습니다.")
+                    print("Zero and negative numbers cannot be entered.")
                     continue
                 print()
 
@@ -595,28 +576,27 @@ while running:
                             number = random.sample(computer_num_refresh,1)
                         computer_nums[0] = number[0]
 
-
+                
                 print(f"""
-    당신은 {my_choices}개를 선택하셨습니다.
-    컴퓨터가 선택할 동안 기다려 주세요!
+You have chosen {my_choices}.
+Please wait for the computer to choose!
                 """)
                 time.sleep(2)
 
-                # 홀 짝 맞는지 확인
+                print(f"""
+The choice of computer is {computer_choice_hz[0]}.                
+                """)
+
                 if my_choices % 2 == 0:
-                    answer = '짝'
+                    answer = 'even'
                 else:
-                    answer = '홀'
-
-                print(f"컴퓨터의 선택은 {computer_choice_hz[0]} 입니다.")
-
-                time.sleep(2)
+                    answer = 'odd'
+                
 
                 if answer == computer_choice_hz[0]:
                     my_bead -= computer_nums[0]
                     computer_bead += computer_nums[0]
-
-                    # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
+            
 
                     if my_bead < 0:
                         my_bead = 0
@@ -627,17 +607,17 @@ while running:
                     if computer_bead > 20:
                         computer_bead = 20
 
+                        
                     print(f"""
-    컴퓨터가 맞췄습니다. 컴퓨터가 배팅한 구슬은 {computer_nums[0]}개입니다. 
-    당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
-    """)
+The computer got it right. There are {computer_nums[0]} beads bet by the computer.
+The number of your beads is {my_bead}. The number of beads on the computer is {computer_bead}.
+                    """)
+                
 
-                    
                 else:
                     my_bead += computer_nums[0]
                     computer_bead -= computer_nums[0]
 
-                    # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
 
                     if my_bead < 0:
                         my_bead = 0
@@ -647,32 +627,32 @@ while running:
                         my_bead = 20 
                     if computer_bead > 20:
                         computer_bead = 20
-                        
+
                     print(f"""
-    컴퓨터가 틀렸습니다. 컴퓨터가 배팅한 구슬은 {computer_nums[0]}개입니다. 
-    당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
-    """)
-                    attack_turn = True
+The computer is wrong. There are {computer_nums[0]} beads bet by the computer.
+The number of your beads is {my_bead}. The number of beads on the computer is {computer_bead}.
+                    """)
+                attack_turn = True
 
 
                 
-        if computer_choice[0] == '후공':
+        if computer_choice[0] == 'later':
             if attack_turn:
+                
                 try:
-                    my_choices = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
+                    my_choices = int(input("Please decide the number of beads (input only the number): "))
                     print()
                 except ValueError:
-                    print("정수만 입력하세요.")
+                    print("Just enter the number.")
                     continue
-
-
+                
                 if my_choices > my_bead:
-                    print("소유한 구슬의 갯수보다 많이 걸수 없습니다.")
+                    print("You can't bet more than the number of beads you own.")
                     continue
                 print()
-
+                
                 if my_choices <= 0 :
-                    print("0과 음수는 입력할 수 없습니다.")
+                    print("Zero and negative numbers cannot be entered.")
                     continue
                 print()
 
@@ -682,28 +662,27 @@ while running:
                             number = random.sample(computer_num_refresh,1)
                         computer_nums[0] = number[0]
 
-
+                
                 print(f"""
-당신은 {my_choices}개를 선택하셨습니다.
-컴퓨터가 선택할 동안 기다려 주세요!
+You have chosen {my_choices}.
+Please wait for the computer to choose!
                 """)
                 time.sleep(2)
 
-                # 홀 짝 맞는지 확인
+                print(f"""
+The choice of computer is {computer_choice_hz[0]}.                
+                """)
+
                 if my_choices % 2 == 0:
-                    answer = '짝'
+                    answer = 'even'
                 else:
-                    answer = '홀'
-
-                print(f"컴퓨터의 선택은 {computer_choice_hz[0]} 입니다.")
-
-                time.sleep(2)
+                    answer = 'odd'
+                
 
                 if answer == computer_choice_hz[0]:
                     my_bead -= computer_nums[0]
                     computer_bead += computer_nums[0]
-
-                    # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
+            
 
                     if my_bead < 0:
                         my_bead = 0
@@ -714,17 +693,17 @@ while running:
                     if computer_bead > 20:
                         computer_bead = 20
 
+                        
                     print(f"""
-컴퓨터가 맞췄습니다. 컴퓨터가 배팅한 구슬은 {computer_nums[0]}개입니다. 
-당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
-    """)
+The computer got it right. There are {computer_nums[0]} beads bet by the computer.
+The number of your beads is {my_bead}. The number of beads on the computer is {computer_bead}.
+                    """)
+                
 
-                    
                 else:
                     my_bead += computer_nums[0]
                     computer_bead -= computer_nums[0]
 
-                    # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
 
                     if my_bead < 0:
                         my_bead = 0
@@ -734,41 +713,41 @@ while running:
                         my_bead = 20 
                     if computer_bead > 20:
                         computer_bead = 20
-                        
+
                     print(f"""
-컴퓨터가 틀렸습니다. 컴퓨터가 배팅한 구슬은 {computer_nums[0]}개입니다. 
-당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
-    """)
+The computer is wrong. There are {computer_nums[0]} beads bet by the computer.
+The number of your beads is {my_bead}. The number of beads on the computer is {computer_bead}.
+                    """)
                 attack_turn = False
-            # 턴이 바뀜
+
             else:
-                my_selection = input("홀,짝 중 정해주세요 : ")
+                my_selection = input("Choose odd or even: ")
                 print()
                 
-                if my_selection != '홀' and my_selection != '짝':
-                    print("홀,짝만 입력해주세요.")
+                if my_selection != 'odd' and my_selection != 'even':
+                    print("Please enter only odd or even.")
                     continue
                 print()
 
                 try:
-                    my_choice_2 = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
+                    my_choice_2 = int(input("Please decide the number of beads (input only the number): "))
                     print()
                 except ValueError:
-                    print("정수만 입력하세요.")
+                    print("Just enter the number.")
                     continue
 
                 
                 if my_choice_2 > my_bead:
-                    print("소유한 구슬의 갯수보다 많이 걸수 없습니다.")
+                    print("You can't bet more than the number of beads you own.")
                     continue
                 print()
 
                 if my_choice_2 <= 0 :
-                    print("0과 음수는 입력할 수 없습니다.")
+                    print("Zero and negative numbers cannot be entered.")
                     continue
                 print()
 
-                print("컴퓨터가 구슬의 갯수를 정하는 중입니다. 기다려 주세요.")
+                print("The computer is determining the number of beads. Please wait.")
                 time.sleep(2)
 
                 if computer_nums[0] >= computer_bead:
@@ -777,15 +756,15 @@ while running:
                             number = random.sample(computer_num_refresh,1)
                         computer_nums[0] = number[0]
 
-            
+
                 if int(computer_nums[0]) % 2 == 0:
-                    answer = '짝'
+                    answer = 'even'
                 
                 else:
-                    answer = '홀'
+                    answer = 'odd'
 
-                print(f"컴퓨터의 구슬은 {computer_nums[0]}개 였습니다.")
 
+                print(f"The computer made {computer_nums[0]} beads.")
                 time.sleep(2)
 
 
@@ -793,7 +772,6 @@ while running:
                     my_bead += my_choice_2
                     computer_bead -= my_choice_2
 
-                    # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
 
                     if my_bead < 0:
                         my_bead = 0
@@ -804,17 +782,17 @@ while running:
                     if computer_bead > 20:
                         computer_bead = 20
 
-                    print(f"""
-당신이 맞췄습니다. 내가 배팅한 구슬은 {my_choice_2}개입니다. 
-당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
-                    """)
 
+                    print(f"""
+You got it right. You bet {my_choice_2} beads.
+The number of your beads is {my_bead}. The number of beads on the computer is {computer_bead}.
+                    """)
+                
                 
                 else:
                     my_bead -= my_choice_2
                     computer_bead += my_choice_2
 
-                    # 구슬의 개수가 음수 거나 20개 이상일 경우 초기화
 
                     if my_bead < 0:
                         my_bead = 0
@@ -826,21 +804,21 @@ while running:
                         computer_bead = 20
 
                     print(f"""
-당신이 틀렸습니다. 내가 배팅한 구슬은 {my_choice_2}개입니다. 
-당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
+You're wrong. You bet {my_choice_2} beads.
+The number of your beads is {my_bead}. The number of beads on the computer is {computer_bead}.
                     """)
                 attack_turn = True
 
                             
-    # 게임 종료
+    # Game Over
     if my_bead <= 0:
 
-        print("당신은 탈락입니다.")
+        print("You are loses!")
         time.sleep(3)
         running = False
     
     if computer_bead <=0:
-        print("당신의 승리입니다.")
+        print("You are win!")
         time.sleep(3)
         running = False
 
