@@ -8,7 +8,7 @@ attack_turn = True
 
 print("Let's start the playing marbles ")
 print()
-
+print("________________________________________________")
 print("I'll explain the rules of playing marbles.")
 
 print()
