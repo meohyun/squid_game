@@ -132,6 +132,9 @@ while running:
                             computer_num_refresh.append(i)
                             number = random.sample(computer_num_refresh,1)
                         computer_nums[0] = number[0]
+                
+                if computer_bead == 1 :
+                    computer_nums[0] = 1
 
                 
                 print(f"""
@@ -230,6 +233,9 @@ The number of your beads is {my_bead}. The number of beads on the computer is {c
                             computer_num_refresh.append(i)
                             number = random.sample(computer_num_refresh,1)
                         computer_nums[0] = number[0]
+                
+                if computer_bead == 1 :
+                    computer_nums[0] = 1
 
 
                 if int(computer_nums[0]) % 2 == 0:
@@ -321,6 +327,9 @@ The number of your beads is {my_bead}. The number of beads on the computer is {c
                             computer_num_refresh.append(i)
                             number = random.sample(computer_num_refresh,1)
                         computer_nums[0] = number[0]
+                
+                if computer_bead == 1 :
+                    computer_nums[0] = 1
 
 
                 if int(computer_nums[0]) % 2 == 0:
@@ -398,6 +407,9 @@ The number of your beads is {my_bead}. The number of beads on the computer is {c
                             computer_num_refresh.append(i)
                             number = random.sample(computer_num_refresh,1)
                         computer_nums[0] = number[0]
+
+                if computer_bead == 1 :
+                    computer_nums[0] = 1
 
                 
                 print(f"""
@@ -498,6 +510,9 @@ The number of your beads is {my_bead}. The number of beads on the computer is {c
                             number = random.sample(computer_num_refresh,1)
                         computer_nums[0] = number[0]
 
+                if computer_bead == 1 :
+                    computer_nums[0] = 1
+
 
                 if int(computer_nums[0]) % 2 == 0:
                     answer = 'even'
@@ -575,6 +590,9 @@ The number of your beads is {my_bead}. The number of beads on the computer is {c
                             computer_num_refresh.append(i)
                             number = random.sample(computer_num_refresh,1)
                         computer_nums[0] = number[0]
+                
+                if computer_bead == 1 :
+                    computer_nums[0] = 1
 
                 
                 print(f"""
@@ -661,6 +679,9 @@ The number of your beads is {my_bead}. The number of beads on the computer is {c
                             computer_num_refresh.append(i)
                             number = random.sample(computer_num_refresh,1)
                         computer_nums[0] = number[0]
+
+                if computer_bead == 1 :
+                    computer_nums[0] = 1
 
                 
                 print(f"""
@@ -755,6 +776,9 @@ The number of your beads is {my_bead}. The number of beads on the computer is {c
                             computer_num_refresh.append(i)
                             number = random.sample(computer_num_refresh,1)
                         computer_nums[0] = number[0]
+
+                if computer_bead == 1 :
+                    computer_nums[0] = 1
 
 
                 if int(computer_nums[0]) % 2 == 0:

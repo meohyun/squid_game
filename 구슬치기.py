@@ -140,6 +140,9 @@ while running:
                             computer_num_refresh.append(i)
                             number = random.sample(computer_num_refresh,1)
                         computer_nums[0] = number[0]
+                
+                if computer_bead == 1 :
+                    computer_nums[0] = 1 
 
                 
                 print(f"""
@@ -240,6 +243,9 @@ while running:
                             number = random.sample(computer_num_refresh,1)
                         computer_nums[0] = number[0]
 
+                if computer_bead == 1 :
+                    computer_nums[0] = 1
+
 
                 if int(computer_nums[0]) % 2 == 0:
                     answer = '짝'
@@ -333,6 +339,9 @@ while running:
                             number = random.sample(computer_num_refresh,1)
                         computer_nums[0] = number[0]
 
+                if computer_bead == 1 :
+                    computer_nums[0] = 1
+
                 if int(computer_nums[0]) % 2 == 0:
                     answer = '짝'
                 
@@ -414,6 +423,8 @@ while running:
                             computer_num_refresh.append(i)
                             number = random.sample(computer_num_refresh,1)
                         computer_nums[0] = number[0]
+                if computer_bead == 1 :
+                    computer_nums[0] = 1
 
                 
                 print(f"""
@@ -515,6 +526,9 @@ while running:
                             number = random.sample(computer_num_refresh,1)
                         computer_nums[0] = number[0]
 
+                if computer_bead == 1 :
+                    computer_nums[0] = 1
+
             
                 if int(computer_nums[0]) % 2 == 0:
                     answer = '짝'
@@ -594,6 +608,9 @@ while running:
                             computer_num_refresh.append(i)
                             number = random.sample(computer_num_refresh,1)
                         computer_nums[0] = number[0]
+                
+                if computer_bead == 1 :
+                    computer_nums[0] = 1
 
 
                 print(f"""
@@ -681,6 +698,9 @@ while running:
                             computer_num_refresh.append(i)
                             number = random.sample(computer_num_refresh,1)
                         computer_nums[0] = number[0]
+                
+                if computer_bead == 1 :
+                    computer_nums[0] = 1
 
 
                 print(f"""
@@ -776,6 +796,9 @@ while running:
                             computer_num_refresh.append(i)
                             number = random.sample(computer_num_refresh,1)
                         computer_nums[0] = number[0]
+
+                if computer_bead == 1 :
+                    computer_nums[0] = 1
 
             
                 if int(computer_nums[0]) % 2 == 0:
