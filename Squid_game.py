@@ -8,7 +8,8 @@ attack_turn = True
 
 print("Let's start the playing marbles ")
 print()
-print("________________________________________________")
+print("_____________________________________________________________________________________________________________________________________________________________________")
+time.sleep(2)
 print("I'll explain the rules of playing marbles.")
 
 print()
@@ -16,12 +17,14 @@ print("""
 Each player starts with 10 beads.
 Decide how many beads the first-man player will grab.
 And a junior player bets on his marble. Next, it refers to whether the number of beads is a hole or a pair.
-If you get it right, the player who made the opponent's marble as many times as the number of bets will get it, and if it's wrong, the player who made the first gets it.
+If you get it right, the player who made the opponent's marble as many times as the number of bets will get it, 
+and if it's wrong, the player who made the first gets it.
 If one person loses all the beads, the game is over.
     """)
 
 print("Before we start, we will decide the order by rock-paper-scissors.")
 print()
+print("_____________________________________________________________________________________________________________________________________________________________________")
 time.sleep(2)
 
 

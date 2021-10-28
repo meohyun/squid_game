@@ -6,9 +6,11 @@ my_bead = 10
 computer_bead = 10
 attack_turn = True
 
-print("구슬치기 게임을 시작하겠습니다.")
+print("---------------------------------------------------------------------------------------------------------------")
+print("첫번째 게임은 구슬치기 게임입니다.")
 print()
-# time.sleep(2)
+
+
 
 # 구슬치기 룰 설명
 print("구슬치기의 룰을 설명하겠습니다.")
@@ -24,6 +26,9 @@ print("""
 
 # 가위바위보로 순서 정하기
 print("시작하기에 앞서 가위바위보로 순서를 정하겠습니다.")
+print()
+
+print("---------------------------------------------------------------------------------------------------------------")
 print()
 time.sleep(2)
 
@@ -143,6 +148,10 @@ while running:
                 
                 if computer_bead == 1 :
                     computer_nums[0] = 1 
+                
+                # 내 구슬이 1개만 남으면 무조건 컴퓨터는 '홀'
+                if my_bead == 1 :
+                    computer_choice_hz[0] = '홀'
 
                 
                 print(f"""
@@ -152,7 +161,7 @@ while running:
                 time.sleep(2)
 
                 print(f"""
-컴퓨터의 선택은 {computer_choice_hz[0]} 입니다.
+컴퓨터의 선택은 \"{computer_choice_hz[0]}\" 입니다.
                 """)
 
                 # 홀 짝 맞는지 확인
@@ -217,7 +226,7 @@ while running:
                 print()
 
                 try:
-                    my_choice_2 = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
+                    my_choice_2 = int(input("배팅할 구슬의 갯수를 정해주세요(숫자만 입력) : "))
                     print()
                 except ValueError:
                     print("정수만 입력하세요.")
@@ -313,7 +322,7 @@ while running:
                 print()
 
                 try:
-                    my_choice_2 = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
+                    my_choice_2 = int(input("배팅할 구슬의 갯수를 정해주세요(숫자만 입력) : "))
                     print()
                 except ValueError:
                     print("정수만 입력하세요.")
@@ -416,15 +425,19 @@ while running:
                     continue
                 print()
 
-                
 
                 if computer_nums[0] >= computer_bead:
                         for i in range(1,computer_bead):
                             computer_num_refresh.append(i)
                             number = random.sample(computer_num_refresh,1)
                         computer_nums[0] = number[0]
+
                 if computer_bead == 1 :
                     computer_nums[0] = 1
+
+                # 내 구슬이 1개만 남으면 무조건 컴퓨터는 '홀'
+                if my_bead == 1 :
+                    computer_choice_hz[0] = '홀'
 
                 
                 print(f"""
@@ -434,7 +447,7 @@ while running:
                 time.sleep(2)
 
                 print(f"""
-컴퓨터의 선택은 {computer_choice_hz[0]} 입니다.
+컴퓨터의 선택은 \"{computer_choice_hz[0]}\" 입니다.
                 """)
 
                 # 홀 짝 맞는지 확인
@@ -500,7 +513,7 @@ while running:
                 print()
 
                 try:
-                    my_choice_2 = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
+                    my_choice_2 = int(input("배팅할 구슬의 갯수를 정해주세요(숫자만 입력) : "))
                     print()
                 except ValueError:
                     print("정수만 입력하세요.")
@@ -611,11 +624,15 @@ while running:
                 
                 if computer_bead == 1 :
                     computer_nums[0] = 1
+                
+                # 내 구슬이 1개만 남으면 무조건 컴퓨터는 '홀'
+                if my_bead == 1 :
+                    computer_choice_hz[0] = '홀'
 
 
                 print(f"""
-    당신은 {my_choices}개를 선택하셨습니다.
-    컴퓨터가 선택할 동안 기다려 주세요!
+당신은 {my_choices}개를 선택하셨습니다.
+컴퓨터가 선택할 동안 기다려 주세요!
                 """)
                 time.sleep(2)
 
@@ -625,7 +642,9 @@ while running:
                 else:
                     answer = '홀'
 
-                print(f"컴퓨터의 선택은 {computer_choice_hz[0]} 입니다.")
+                print(f"""
+컴퓨터의 선택은 \"{computer_choice_hz[0]}\" 입니다.
+                """)
 
                 time.sleep(2)
 
@@ -645,8 +664,8 @@ while running:
                         computer_bead = 20
 
                     print(f"""
-    컴퓨터가 맞췄습니다. 컴퓨터가 배팅한 구슬은 {computer_nums[0]}개입니다. 
-    당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
+컴퓨터가 맞췄습니다. 컴퓨터가 배팅한 구슬은 {computer_nums[0]}개입니다. 
+당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
     """)
 
                     
@@ -666,8 +685,8 @@ while running:
                         computer_bead = 20
                         
                     print(f"""
-    컴퓨터가 틀렸습니다. 컴퓨터가 배팅한 구슬은 {computer_nums[0]}개입니다. 
-    당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
+컴퓨터가 틀렸습니다. 컴퓨터가 배팅한 구슬은 {computer_nums[0]}개입니다. 
+당신의 구슬의 갯수는 {my_bead}개입니다. 컴퓨터의 구슬의 갯수는 {computer_bead}개입니다.
     """)
                     attack_turn = True
 
@@ -702,6 +721,9 @@ while running:
                 if computer_bead == 1 :
                     computer_nums[0] = 1
 
+                if my_bead == 1 :
+                    computer_choice_hz[0] = '홀'
+
 
                 print(f"""
 당신은 {my_choices}개를 선택하셨습니다.
@@ -715,7 +737,9 @@ while running:
                 else:
                     answer = '홀'
 
-                print(f"컴퓨터의 선택은 {computer_choice_hz[0]} 입니다.")
+                print(f"""
+컴퓨터의 선택은 \"{computer_choice_hz[0]}\" 입니다.
+                """)
 
                 time.sleep(2)
 
@@ -771,7 +795,7 @@ while running:
                 print()
 
                 try:
-                    my_choice_2 = int(input("구슬의 갯수를 정해주세요(숫자만 입력) : "))
+                    my_choice_2 = int(input("배팅할 구슬의 갯수를 정해주세요(숫자만 입력) : "))
                     print()
                 except ValueError:
                     print("정수만 입력하세요.")
